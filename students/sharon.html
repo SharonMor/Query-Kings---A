@@ -2,36 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/student.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <title>Sharon's Page</title>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="../index.html">Home</a>
-        </nav>
     </header>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Students <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="./sharon.html">Sharon</a>
+                    <a href="./gal.html">Gal</a>
+                    <a href="./michal.html">Michal</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
     <h1>Sharon's Profile</h1>
-    <p>Email: sharon@example.com</p>
+    <h2>Email: sharon.mor@e.braude.ac.il</h2>
     <h2>Hobbies</h2>
     <ul>
-        <li>Reading</li>
-        <li>Photography</li>
-        <li>Hiking</li>
+        <li>Developing</li>
+        <li>Creating Bugs</li>
+        <li>Fixing Bugs</li>
     </ul>
     <h2>Courses</h2>
     <table>
         <tr>
             <th>Course Name</th>
-            <th>Grade</th>
         </tr>
         <tr>
-            <td>Mathematics</td>
-            <td>90</td>
+            <td>אחזור מידע</td>
         </tr>
         <tr>
-            <td>Physics</td>
-            <td>85</td>
+            <td>סמינר באימות תוכנה</td>
+        </tr>
+        <tr>
+            <td>חדר כושר לנפש</td>
+        </tr>
+        <tr>
+            <td>מעבדה בתבניות עיצוב</td>
+        </tr>
+        <tr>
+            <td>אתיקה בבינה מלאכותית</td>
+        </tr>
+        <tr>
+            <td>'פרויקט גמר חלק ב</td>
         </tr>
     </table>
 </body>

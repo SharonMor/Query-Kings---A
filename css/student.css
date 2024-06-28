@@ -1,0 +1,89 @@
+/* Basic styling for student pages */
+body, h1, p, table {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #102a43;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-top: 100px; /* Make sure content doesn't hide under the navbar */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    max-width: 900px; /* Maximum width for content area */
+    margin: auto; /* Center the content area */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+}
+
+h1, h2, ul, table {
+    width: 100%; /* Full width within the content area */
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 32px;
+}
+
+h2 {
+    color: #005792;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    margin: 5px 0;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    text-align: center; /* Center text in list items */
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: center; /* Center align table data */
+    padding: 8px;
+    border-bottom: 1px solid #cccccc;
+}
+
+th {
+    background-color: #003566;
+    color: white;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        margin-top: 20px; /* Smaller top margin on small screens */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    header nav a {
+        font-size: 18px;
+    }
+}

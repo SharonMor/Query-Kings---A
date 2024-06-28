@@ -1,0 +1,84 @@
+/* Fixed navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #003566; /* Dark blue */
+    z-index: 1000; /* Ensures navbar stays on top */
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center align nav items */
+    padding: 0;
+    margin: 0;
+    height: 50px; /* Set a fixed height for the navbar */
+    align-items: center;
+}
+
+.navbar ul li {
+    padding: 0 20px; /* Padding for clickable area */
+}
+
+.navbar a {
+    color: #FFD700;  /* Gold color for links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #ffc107;  /* Lighter gold on hover */
+    text-decoration: underline;
+}
+
+/* Dropdown menu styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0; /* Ensure dropdown aligns under the button */
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 50;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #102a43;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.fas.fa-home {
+    margin-right: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+        padding: 10px 0; /* Add padding to separate items in a column */
+    }
+
+    .navbar ul li {
+        text-align: center; /* Center align the text for stacked items */
+        width: 100%; /* Full width for mobile responsiveness */
+    }
+
+    .dropdown-content {
+        width: 100%; /* Full width dropdown in mobile view */
+    }
+}

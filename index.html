@@ -3,19 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Student Website</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 </head>
 <body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Students <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="students/sharon.html">Sharon</a>
+                    <a href="students/gal.html">Gal</a>
+                    <a href="students/michal.html">Michal</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
     <header>
         <h1>Welcome to Our Student Website</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="students/sharon.html">Sharon</a></li>
-            <li><a href="students/gal.html">Gal</a></li>
-            <li><a href="students/michal.html">Michal</a></li>
-        </ul>
-    </nav>
-    <p>This website showcases the profiles of our students Sharon, Gal, and Michal. Navigate through the links above to learn more about each student’s interests and academic achievements.</p>
+    <div class="carousel">
+        <div class="slide">
+            <img src="./assets/sharon.jpeg" alt="Sharon">
+            <p>Sharon - Interested in soccer and computers.</p>
+        </div>
+        <div class="slide">
+            <img src="./assets/gal.jpeg" alt="Gal">
+            <p>Gal - Loves Tennis and Music.</p>
+        </div>
+        <div class="slide">
+            <img src="./assets/michal.jpeg" alt="Michal">
+            <p>Michal - Loves cooking and partying.</p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
