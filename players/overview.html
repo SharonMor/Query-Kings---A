@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Player Overview</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/playerOverview.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Students <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="../students/sharon.html">Sharon</a>
+                    <a href="../students/gal.html">Gal</a>
+                    <a href="../students/michal.html">Michal</a>
+                </div>
+            </li>
+            <li><a href="../rankings.html">Player Rankings</a></li>
+            <li><a href="overview.html">Player Overview</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Player Overview</h1>
+    </header>
+
+    <section id="player-overview">
+        <label for="playerSelect">Choose a player:</label>
+        <select id="playerSelect">
+            <option value="">Select a player</option>
+            <option value="federerData.json">Roger Federer</option>
+            <option value="nadalData.json">Rafael Nadal</option>
+            <option value="djokovicData.json">Novak Djokovic</option>
+            <option value="alcarazData.json">Carlos Alcaraz</option>
+        </select>
+        <canvas id="playerChart" width="800" height="400"></canvas>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/overview.js"></script>
+</body>
+</html>
