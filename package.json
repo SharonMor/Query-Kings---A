@@ -1,0 +1,19 @@
+{
+  "name": "query-kings---a",
+  "version": "1.0.0",
+  "main": "index.js",
+ "scripts": {
+    "start": "node server.js",
+    "crawl": "node js/crawler.js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "puppeteer": "^22.13.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

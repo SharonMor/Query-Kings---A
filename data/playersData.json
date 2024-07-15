@@ -1,0 +1,82 @@
+[
+  {
+    "rank": "1",
+    "name": "Kuzey\nCekirge",
+    "yearOfBirth": "2000",
+    "nationality": "Turkiye",
+    "tournamentsPlayed": "18",
+    "points": "36"
+  },
+  {
+    "rank": "2",
+    "name": "Adan\nFreire Da Silva",
+    "yearOfBirth": "1999",
+    "nationality": "France",
+    "tournamentsPlayed": "20",
+    "points": "36"
+  },
+  {
+    "rank": "3",
+    "name": "Tai Leonard\nSach",
+    "yearOfBirth": "2002",
+    "nationality": "Australia",
+    "tournamentsPlayed": "25",
+    "points": "34"
+  },
+  {
+    "rank": "4",
+    "name": "Finn\nBass",
+    "yearOfBirth": "1999",
+    "nationality": "Great Britain",
+    "tournamentsPlayed": "19",
+    "points": "33"
+  },
+  {
+    "rank": "5",
+    "name": "Francesco\nFerrari",
+    "yearOfBirth": "1997",
+    "nationality": "Italy",
+    "tournamentsPlayed": "17",
+    "points": "32"
+  },
+  {
+    "rank": "6",
+    "name": "Stefan Adrian\nAndreescu",
+    "yearOfBirth": "2001",
+    "nationality": "Romania",
+    "tournamentsPlayed": "19",
+    "points": "32"
+  },
+  {
+    "rank": "7",
+    "name": "Stefano\nD'agostino",
+    "yearOfBirth": "2003",
+    "nationality": "Italy",
+    "tournamentsPlayed": "24",
+    "points": "32"
+  },
+  {
+    "rank": "8",
+    "name": "Noah\nPerfetti",
+    "yearOfBirth": "2001",
+    "nationality": "Italy",
+    "tournamentsPlayed": "24",
+    "points": "31"
+  },
+  {
+    "rank": "9",
+    "name": "Corban\nCrowther",
+    "yearOfBirth": "2003",
+    "nationality": "New Zealand",
+    "tournamentsPlayed": "24",
+    "points": "31"
+  },
+  {
+    "rank": "10",
+    "name": "Matt\nHulme",
+    "yearOfBirth": "1999",
+    "nationality": "Australia",
+    "tournamentsPlayed": "15",
+    "points": "30"
+  }
+]
