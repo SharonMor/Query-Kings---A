@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESPN Tennis Search Engine</title>
+    <title>ESPN Tennis Search Engine - Query Kings - HW3</title>
     <style>
         body { 
             font-family: Arial, sans-serif; 
@@ -79,11 +79,90 @@
             font-size: 12px;
             color: #666;
         }
+        .project-analysis {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .project-analysis h2 {
+            color: #1a73e8;
+            border-bottom: 2px solid #1a73e8;
+            padding-bottom: 10px;
+        }
+        .project-analysis h3 {
+            color: #333;
+            margin-top: 20px;
+        }
+        .project-analysis p, .project-analysis ul {
+            line-height: 1.6;
+        }
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>ESPN Tennis Search Engine</h1>
+        <h1>ESPN Tennis Search Engine - Query Kings - HW3</h1>
+        <br class="project-analysis">
+            <h2>Project Analysis</h2>
+            
+            <h3>א. Technologies Used in HW2</h3>
+            <ul>
+                <li>Puppeteer for web scraping and data extraction</li>
+                <li>JavaScript as the programming language</li>
+                <li>Node.js as the runtime environment</li>
+                <li>ExcelJS library for creating and editing Excel files</li>
+            </ul>
+
+            <h3>ב. Query Execution Time in HW2</h3>
+            <p>Total execution time: 7 minutes and 40 seconds</p>
+            <p>Average time per query: 2 minutes and 33 seconds</p>
+            <p>Factors affecting execution time: We didn't focus on complexity and runtime optimization. We included extra waiting times for page loads and implemented several loops that could be improved.</p>
+            <p>Potential improvements: Using different technologies, as Puppeteer with JS isn't ideal for runtime optimization. Implementing parallel page openings could significantly reduce execution time.</p>
+
+            <h3>ג. Hubs and Authorities</h3>
+            <p>The returned pages contain both hubs and authorities. For example, the page "Ranking the top 10 women's tennis players of the 21st century" links to "Ranking the top 10 men's tennis players of the 21st century" and vice versa, showing bi-directional connectivity between these pages.</p>
+            <img src="images/hubs3.jpeg" alt="Example of Hubs and Authorities" class="project-image">
+        </br>
+            <img src="images/hubs2.jpeg" alt="Example of Hubs and Authorities" class="project-image">
+            <img src="images/hubs1.jpeg" alt="Example of Hubs and Authorities" class="project-image">
+            <h3>ד. PageRank Calculation</h3>
+            <p>PageRank was calculated for 10 pages returned from the query "top 10 tennis men ranking". The calculation was performed manually over 4 iterations.</p>
+            <img src="images/pagerank1.jpeg" alt="Example of Hubs and Authorities" class="project-image">
+            <img src="images/pagerank3.jpeg" alt="Example of Hubs and Authorities" class="project-image">
+            <img src="images/pagerank2.jpeg" alt="Example of Hubs and Authorities" class="project-image">
+
+            <p>Final PageRank results:</p>
+            <ol>
+                <li>J: 0.81 (Ranking the top 100 professional athletes since 2000)</li>
+                <li>B: 0.263</li>
+                <li>D: 0.262</li>
+                <li>A: 0.214</li>
+                <li>C: 0.214</li>
+                <li>E: 0.15</li>
+                <li>F: 0.15</li>
+                <li>G: 0.15</li>
+                <li>H: 0.15</li>
+                <li>I: 0.15</li>
+            </ol>
+
+            <h3>ה. User Feedback and Query Improvement</h3>
+            <p>User 1 selected pages B, D, and J as relevant.</p>
+            <p>User 2 selected only page B as relevant.</p>
+            <p>Improved query suggestion: "best 10 men's tennis ranking" instead of "top 10 tennis men ranking"</p>
+
+            <h3>ו. HTML Page</h3>
+            <p>This page serves as the HTML representation of all sections (א-ו) of the project analysis.</p>
+            <a href="https://sharonmor.github.io/IR-HW3/">Visit the IR-HW3 Project</a>
+
+        </div>
         <form id="searchForm">
             <select id="query" name="query" required>
                 <option value="">Select a query</option>
