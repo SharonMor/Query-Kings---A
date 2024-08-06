@@ -1,1 +1,1 @@
-Hello World
+Repo for information retrieval course
