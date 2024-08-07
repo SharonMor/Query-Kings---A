@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryKings - ESPN Tennis Search Engine Project</title>
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #f1f3f4;
+            --text-color: #202124;
+            --link-color: #1967d2;
+        }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: var(--primary-color);
+        }
+        section {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #searchForm {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        select, button {
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #1557b0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--secondary-color);
+        }
+        .results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .article-card {
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    .article-card:hover {
+        transform: translateY(-5px);
+    }
+    .article-image {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+    .article-content {
+        padding: 15px;
+    }
+    .article-title {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        line-height: 1.3;
+    }
+    .article-meta {
+        font-size: 12px;
+        color: #666;
+    }
+    .project-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+
+code {
+    font-family: monospace;
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>QueryKings - ESPN Tennis Search Engine Project</h1>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>At the beginning of the course, when we learned that we needed to choose a website for the crawler project, it was clear to us that we would choose a site dealing with tennis, as it's a topic loved by all group members. The initially chosen site was <a href="https://www.itftennis.com/en/" target="_blank">https://www.itftennis.com/en/</a>. We chose it because it looked up-to-date, organized, and mainly because we saw that it lacked information on which we could make queries efficiently and, in addition to the experience of creating a crawler, we would also get added value from the site itself.</p>
+            <p>Therefore, we performed the first part of the project on this site, extracted interesting information and presented data in a convenient way that is not provided on the site, thus creating the following site: <a href="https://sharonmor.github.io/Query-Kings---A/" target="_blank">https://sharonmor.github.io/Query-Kings---A/</a></p>
+            <p>As the course progressed, we realized that the main essence of a crawler, dynamically searching pages on a site, was missed in the first part of the project and that it was not possible to continue working on the site we chose because searching in it returns very poor results, so poor that they are not even pages on the site but actual pdf files that can be downloaded:</p>
+            <img src="images/iftennis1.jpeg" alt="image of first website" class="project-image">
+
+            <p>Finally, it was decided to change the site on which we will perform the search and we chose <a href="https://www.espn.com/" target="_blank">www.espn.com</a> because it contains all the things we were looking for and it's also easy to perform a search on it and therefore provides fertile ground for a crawler.</p>
+        </section>
+
+
+        <section id="website-info">
+            <h2>1. Website Information</h2>
+            <p>The site we chose is ESPN.</p>
+            <p>Link to the chosen site: <a href="https://www.espn.com" target="_blank">https://www.espn.com</a>/</p>
+            <p>ESPN is a leading media company specializing in providing comprehensive sports content across various platforms. The site offers a wide range of services to users in major sports such as football, basketball, baseball, tennis, and more. Users can access live game score updates, read in-depth articles, watch top clips, view statistics data for teams and players, and more.</p>
+            <img src="images/espn.jpeg" alt="image of first website" class="project-image">
+
+        </section>
+
+        <section id="queries">
+            <h2>2. Interesting Queries</h2>
+            <p>The main query we wanted to explore is to get and display the best tennis players in the world - 'top tennis men ranking'. We explored this query from several angles, we saw that the site does not display the information sufficiently and we were interested to know how much the site, ESPN, puts this query at the center, we were interested in whether the search results of this query would be satisfactory for us and whether for others. Around this query, we chose two additional queries: tennis competition, best men tennis players, to understand again the full picture and the site's approach to the different content of the query.</p>
+            <!-- Add image of queries here -->
+        </section>
+
+        <section id="crawler">
+            <h2>3. Crawler</h2>
+            <p>Crawler code: <a href="https://github.com/SharonMor/Query-Kings---A/blob/main/HW2/HW2.js" target="_blank">https://github.com/SharonMor/Query-Kings---A/blob/main/HW2/HW2.js</a></p>
+            <p>Here's an example of the main function in our crawler:</p>
+            <pre><code>
+        async function main() {
+            const browser = await puppeteer.launch({ headless: false });
+            const page = await browser.newPage();
+            await page.setViewport({ width: 1366, height: 768 });
+            await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
+            page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+            const workbook = new ExcelJS.Workbook();
+            for (const [index, queryObj] of queries.entries()) {
+                const { query, words } = queryObj;
+                console.log(`Processing query ${index + 1}: "${query}"`);
+                
+                searchQuery = query;
+                queryWords = words;
+                const texts = [];
+                try {
+                    console.log("Navigating to the website and performing search...");
+                    await takeScreenshot(page, `before-search-${index}`);
+                    const articleUrls = await searchAndGetArticleUrls(page, searchQuery);
+                    await takeScreenshot(page, `after-search-${index}`);
+                    if (articleUrls.length === 0) {
+                        console.log("No article URLs found. Skipping to next query.");
+                        continue;
+                    }
+                    for (const url of articleUrls) {
+                        try {
+                            const articleContent = await scrapeArticle(page, url);
+                            texts.push(articleContent);
+                            console.log(`Successfully scraped article: ${url}`);
+                        } catch (error) {
+                            console.error(`Error scraping article ${url}:`, error);
+                        }
+                        await delay(2000);
+                    }
+                    const { wordCounts, urlWordCounts } = createWordCounts(texts);
+                    const sheetPrefix = `Q${index + 1}_`;
+                    createWordCountSheet(workbook, wordCounts, `${sheetPrefix}Word Counts`);
+                    createInvertedIndexSheet(workbook, wordCounts, urlWordCounts, articleUrls, `${sheetPrefix}Inverted Index`);
+                    createTFIDFSheet(workbook, urlWordCounts, articleUrls, `${sheetPrefix}TF-IDF`);
+                } catch (error) {
+                    console.error(`An error occurred for query "${query}":`, error);
+                    await takeScreenshot(page, `error-${index}`);
+                }
+            }
+            await browser.close();
+            try {
+                await workbook.xlsx.writeFile('ESPNTennisArticlesNew.xlsx');
+                console.log('Excel file created: ESPNTennisArticlesNew.xlsx');
+            } catch (error) {
+                console.error("Error writing Excel file:", error.message);
+            }
+        }
+        main().catch(console.error);
+            </code></pre>
+        </section>
+
+        <section id="technologies">
+            <h2>4. Technologies Used</h2>
+            <ul>
+                <li>Puppeteer for visiting pages and extracting relevant information</li>
+                <li>Javascript as the runtime language</li>
+                <li>NodeJs as the runtime environment for JS</li>
+                <li>ExcelJS library for creating and editing Excel files</li>
+            </ul>
+        </section>
+
+        <section id="query-time">
+            <h2>5. Query Execution Time</h2>
+            <p>The total queries took 7 minutes and 40 seconds, meaning each query took Puppeteer about 2 minutes and 33 seconds. The long time is due to the fact that we did not emphasize complexity and runtime, we gave a lot of "extra" times in which we waited several seconds for pages to load and conducted several loops that we believe can be improved.</p>
+            <p>We believe that the runtime can be improved with the use of other technologies, we chose to use puppeteer on JS and this is not the ideal tool for runtimes. In addition, opening the pages in a parallel manner will greatly shorten the runtime.</p>
+        </section>
+
+        <section id="inverted-index">
+            <h2>6. Inverted Index</h2>
+            <p>Inverted index for the first query, each column is another page. Words on the first column are 15 most commonly used words + query words</p>
+            <img src="images/invertedindex.jpeg" alt="image of inverted index" class="project-image">
+        </section>
+
+        <section id="tf-idf">
+            <h2>7. TF-IDF Calculation</h2>
+            <p>For the first query, we performed tfidf for each page. We calculated the results using a script during the crawler's run. Code for the script can be seen here: <a href="https://github.com/SharonMor/Query-Kings---A/blob/main/HW2/HW2.js">https://github.com/SharonMor/Query-Kings---A/blob/main/HW2/HW2.js</a></p>
+            <img src="images/tfidf.jpeg" alt="image of tfidf" class="project-image">
+            <p>Rank 1: <a href="https://www.espn.com/tennis/story?id=40581041&_slug_=ranking-top-10-women-tennis-players-21st-century" target="_blank"> https://www.espn.com/tennis/story?id=40581041&_slug_=ranking-top-10-women-tennis-players-21st-century</a></p>
+            <p>Important note: In this query there were 2 words that appeared in all pages due to a common word (top) and a word that appeared in the menu, which appeared in each of the pages (tennis). As a result, we received that all the results that came back were 0 due to the calculation of the idf of the page:</p>
+            <p>Math.log((documents.length + 1) / (documentsWithWord + 1)) = Math.log(1) = 0</p>
+            <p>That is, TF * 0 = 0.</p>
+            <p>We didn't want all the results to be zeroed and we couldn't derive information from this, so we added 1 to each IDF result in order to give expression to the TF calculation of the QUERY word and thus derive a certain direction for each word in any case. We found the idea of adding the one in stackoverflow:</p>
+            <img src="images/stackoverflow.jpeg" alt="image of stackoverflow" class="project-image">
+            <p>After results we saw that the 2 results with the highest score are also the most relevant.</p>
+        </section>
+
+        <section id="hubs-authorities">
+            <h2>8. Hubs and Authorities</h2>
+            <p>The returned pages contain both hubs and authorities. For example, the page "Ranking the top 10 women's tennis players of the 21st century" links to "Ranking the top 10 men's tennis players of the 21st century" and vice versa, showing bi-directional connectivity between these pages.</p>
+            <img src="images/hubs3.jpeg" alt="Example of Hubs and Authorities" class="project-image">
+        </br>
+        <div style="display: flex; gap: 30px;">
+            <img src="images/hubs2.jpeg" alt="Example of Hubs and Authorities" class="project-image">
+            <img src="images/hubs1.jpeg" alt="Example of Hubs and Authorities" class="project-image">
+        </div>
+        </section>
+
+        <section id="page-rank">
+            <h2>9. PageRank Calculation</h2>
+            <p>We performed a Page rank calculation for the 10 pages returned from the query: top 10 tennis men ranking. We performed the calculation manually - we went through each page (from the left column) and saw which other page it refers to. A matrix of the 10 pages (attached link to each letter representing a certain page) that were returned is presented here where a red square represents that there is no reference to another page and a green square represents that there is a reference to another page, a black square is not relevant (self-reference).</p>
+            <img src="images/pagerank1.jpeg" alt="pagerank matrix" class="project-image">
+            <p>Attached is a table with values in which the pageRank ranking was calculated in each iteration (a total of 4 iterations)</p>
+            <img src="images/pagerank2.jpeg" alt="pagerank iteraions" class="project-image">
+            <p>The formula we used to calculate the page rank is:</p>
+            <img src="images/pagerankformula.jpeg" alt="pagerank formula" class="project-image">
+            <p>where d factor is 0.85 in our case.</p>
+            <p>You can see that J has the highest PageRank when J is the page Ranking the top 100 professional athletes since 2000</p>
+            <p>That is, many links access it (you can also see in the matrix attached initially, that in column J there are many green squares, which shows that many pages have links to this page).</p>
+            <img src="images/pagerank3.jpeg" alt="pagerank graph" class="project-image">
+            <p>Attached is a graph describing the connectivity between the 10 pages returned from the query.</p>
+            <h3>Final results in order of ranking:</h3>
+            <ol>
+                <li>Ranking of J: 0.81</li>
+                <li>Ranking of B: 0.263</li>
+                <li>Ranking of D: 0.262</li>
+                <li>Ranking of A: 0.214</li>
+                <li>Ranking of C: 0.214</li>
+                <li>Ranking of E: 0.15</li>
+                <li>Ranking of F: 0.15</li>
+                <li>Ranking of G: 0.15</li>
+                <li>Ranking of H: 0.15</li>
+                <li>Ranking of I: 0.15</li>
+            </ol>
+        </section>
+
+        <section id="relevance-feedback">
+            <h2>10. Relevance Feedback</h2>
+            <p>User 1: Chose that the relevant pages are - B,D,J</p>
+            <p>User 2: Chose that the relevant pages are - B</p>
+            <p>B- Ranking the top 10 men's tennis players of the 21st century</p>
+            <p>D- Ranking the top 10 women's tennis players of the 21st century</p>
+            <p>J- Ranking the top 100 professional athletes since 2000</p>
+            <p>For the original query top 10 tennis men ranking we get:</p>
+            <img src="images/originalquery.jpeg" alt="original query" class="project-image">
+            <p>New query: best 10 men's tennis ranking</p>
+            <img src="images/refinedquery.jpeg" alt="reefined query" class="project-image">
+            <p>You can see that by changing the query, we get results that are more relevant to what the user is looking for.</p>
+            <h3>Precision and Recall Calculation</h3>
+            <p>A total of about 50 pages were returned from this query.</p>
+            <p>The documents we found to be relevant:</p>
+            <ul>
+                <li><a href="https://www.espn.com/tennis/story?id=40581478&_slug_=ranking-top-10-men-tennis-players-21st-century">Ranking the top 10 men's tennis players of the 21st century</a></li>
+                <li><a href="https://www.espn.com/espn/story/_/id/40446224/top-100-athletes-21st-century">Ranking the top 100 professional athletes since 2000</a></li>
+                <li><a href="https://www.espn.com/nfl/story/_/id/40618858/ranking-top-athletes-21st-century">ESPN's top athletes of the 21st Century: Every sport ranking</a></li>
+            </ul>
+            <p>That is, 3 relevant documents out of 50 documents in total.</p>
+            <p>Let's look at the first 10 pages that came back. Out of the first 10 pages that came back, 2 of them are relevant.</p>
+            <p>Therefore we will get according to the calculation:</p>
+            <img src="images/precisionrecallformula.jpeg" alt="precision vs recall formulas" class="project-image">
+            <p>|RET inter ReL| = 2</p>
+            <p>|RET| = 10</p>
+            <p>|REL| = 3</p>
+            <p>Precision = 2/10</p>
+            <p>Recall = 2/3</p>
+        </section>
+
+        <section id="search-engine">
+            <h2>Search Engine</h2>
+            <form id="searchForm">
+                <select id="query" name="query" required>
+                    <option value="">Select a query</option>
+                    <option value="top_10_tennis_men_ranking">Top 10 tennis men ranking</option>
+                    <option value="tennis_competition">Tennis competition</option>
+                    <option value="best_men_tennis_players">Best men tennis players</option>
+                </select>
+                <select id="filter" name="filter">
+                    <option value="">No filter</option>
+                    <option value="tennis">Tennis</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+            <div id="results"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Project by: Gal Polak, Sharon Mor, Michal Ginat</p>
+        <p>GitHub Repository: <a href="https://github.com/SharonMor/Query-Kings---A" target="_blank">https://github.com/SharonMor/Query-Kings---A</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const query = document.getElementById('query').value;
+            const filter = document.getElementById('filter').value;
+            const results = document.getElementById('results');
+            results.innerHTML = 'Searching...';
+            
+            try {
+                const response = await fetch(`data/${query}.json`);
+                if (!response.ok) {
+                    throw new Error('Search results not found');
+                }
+                const data = await response.json();
+                displayResults(data, filter);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                results.innerHTML = 'No results found for this query. Please try a different selection.';
+            }
+        });
+    
+        function displayResults(data, filter) {
+            const results = document.getElementById('results');
+            let htmlContent = `<h3>Search Results</h3><div class="results-grid">`;
+    
+            const filteredData = filter 
+                ? data.filter(article => article.title.toLowerCase().includes(filter.toLowerCase()))
+                : data;
+    
+            if (filteredData.length === 0) {
+                results.innerHTML = 'No articles found matching the selected filter.';
+                return;
+            }
+    
+            filteredData.forEach(article => {
+                htmlContent += `
+                    <div class="article-card">
+                        <img class="article-image" src="${article.imageUrl}" alt="${article.title}">
+                        <div class="article-content">
+                            <h4 class="article-title"><a href="${article.url}" target="_blank">${article.title}</a></h4>
+                            <p class="article-meta">${article.date} • ${article.author}</p>
+                        </div>
+                    </div>
+                `;
+            });
+    
+            htmlContent += `</div>`;
+            results.innerHTML = htmlContent;
+        }
+    </script>
+</body>
+</html>
+
+
