@@ -142,15 +142,15 @@
             <p>Final PageRank results:</p>
             <ol>
                 <li>J: 0.81 (Ranking the top 100 professional athletes since 2000)</li>
-                <li>B: 0.263</li>
-                <li>D: 0.262</li>
-                <li>A: 0.214</li>
-                <li>C: 0.214</li>
-                <li>E: 0.15</li>
-                <li>F: 0.15</li>
-                <li>G: 0.15</li>
-                <li>H: 0.15</li>
-                <li>I: 0.15</li>
+                <li>B: 0.263 (Ranking the top 10 men's tennis players of the 21st century)</li>
+                <li>D: 0.262 (Ranking the top 10 women's tennis players of the 21st century)</li>
+                <li>A: 0.214 (MMA pound-for-pound rankings: Aspinall, Muhammad charge into top 10 -- who made it higher?)</li>
+                <li>C: 0.214 (Ranking the top 10 men's boxers of the 21st century)</li>
+                <li>E: 0.15 (Field Yates' fantasy football PPR rankings: Top 160 for 2024)</li>
+                <li>F: 0.15 (Top 10 men's MMA fighters of the 21st century)</li>
+                <li>G: 0.15 (Ranking the top 10 women's boxers of the 21st century)</li>
+                <li>H: 0.15 (100 days to men's college basketball: Top stories, players, games)</li>
+                <li>I: 0.15 (Ranking the top 25 men's soccer players of the 21st century)</li>
             </ol>
 
             <h3>ה. User Feedback and Query Improvement</h3>
@@ -164,7 +164,11 @@
 
         </div>
         <form id="searchForm">
-            <select id="query" name="query" required>
+            <p class="center-text">
+                Without filtering for tennis, we get results that are irrelevant to the first queries.<br>
+                By applying the tennis filter, we see results that are more aligned with our needs.
+            </p>
+                <select id="query" name="query" required>
                 <option value="">Select a query</option>
                 <option value="top_10_tennis_men_ranking">Top 10 tennis men ranking</option>
                 <option value="tennis_competition">Tennis competition</option>
